@@ -1,0 +1,14 @@
+.detail_wrap {
+  box-sizing: border-box;
+  margin: 200px auto;
+  display: block;
+  width: 500px;
+}
+
+.text_area {
+  background-color: lightgrey;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
