@@ -33,7 +33,7 @@ const App = () => {
             path='/article'
             render={() => <Article articles={articles} />}
           />
-          <Route component={NotFound} />
+          <Route render={(props) => <NotFound history={props.history} />} />
         </Switch>
       </div>
     </React.Fragment>
