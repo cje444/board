@@ -1,9 +1,9 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
+import { withRouter } from "react-router-dom";
 
 const ElTable = (props) => {
   const articles = props.articles;
-  console.log(articles);
 
   return (
     <React.Fragment>
@@ -17,22 +17,19 @@ const ElTable = (props) => {
         </thead>
         <tbody>
           {articles.map((article) => (
-            <tr key={article._id}>
+            <tr
+              key={article._id}
+              onClick={() => props.history.push("/article")}
+            >
               <td>{article.no}</td>
               <td>{article.author}</td>
               <td>{article.title}l</td>
             </tr>
           ))}
-
-          {/* <tr>
-            <td>1</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr> */}
         </tbody>
       </Table>
     </React.Fragment>
   );
 };
 
-export default ElTable;
+export default withRouter(ElTable);
