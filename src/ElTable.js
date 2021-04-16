@@ -1,7 +1,20 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
+import { useSelector, useDispatch } from "react-redux";
+import { actionCreators as articleActions } from "./redux/modules/article";
 
 const ElTable = (props) => {
+  const dispatch = useDispatch();
+  const articles = useSelector((state) => state.article.articles);
+
+  console.log(articles);
+
+  // React.useEffect(() => {
+  //   articleActions.then(function (result) {
+  //     dispatch(result);
+  //   });
+  // }, []);
+
   return (
     <React.Fragment>
       <Table responsive>
@@ -16,21 +29,13 @@ const ElTable = (props) => {
         <tbody>
           <tr>
             <td>1</td>
-            {Array.from({ length: 2 }).map((_, index) => (
-              <td key={index}>Table cell {index}</td>
-            ))}
-          </tr>
-          <tr>
-            <td>2</td>
-            {Array.from({ length: 2 }).map((_, index) => (
-              <td key={index}>Table cell {index}</td>
-            ))}
-          </tr>
-          <tr>
-            <td>3</td>
-            {Array.from({ length: 2 }).map((_, index) => (
-              <td key={index}>Table cell {index}</td>
-            ))}
+            {articles.map((a, index) => {
+              return (
+                <td key={a.id} {...a}>
+                  Table cell {index}
+                </td>
+              );
+            })}
           </tr>
         </tbody>
       </Table>

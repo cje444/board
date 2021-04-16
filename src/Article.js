@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import "./Detail.css";
+import "./Article.css";
 
-const Detail = (props) => {
+const Article = (props) => {
   return (
     <React.Fragment>
       <div className='detail_wrap'>
@@ -19,4 +19,4 @@ const Detail = (props) => {
     </React.Fragment>
   );
 };
-export default Detail;
+export default Article;
