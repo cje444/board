@@ -33,6 +33,10 @@ const App = () => {
             path='/article'
             render={() => <Article articles={articles} />}
           />
+          <Route
+            path='/article/:_id'
+            render={() => <Article articles={articles} />}
+          />
           <Route render={(props) => <NotFound history={props.history} />} />
         </Switch>
       </div>

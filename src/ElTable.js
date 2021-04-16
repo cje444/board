@@ -19,7 +19,7 @@ const ElTable = (props) => {
           {articles.map((article) => (
             <tr
               key={article._id}
-              onClick={() => props.history.push("/article")}
+              onClick={() => props.history.push(`/article/${article._id}`)}
             >
               <td>{article.no}</td>
               <td>{article.author}</td>
