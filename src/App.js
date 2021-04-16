@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Write from "./Write";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
 import Home from "./Home";
 import Article from "./Article";
+import NotFound from "./NotFound";
 
 const App = () => {
   const [articles, setArticles] = useState([]);
@@ -24,9 +25,16 @@ const App = () => {
   return (
     <React.Fragment>
       <div className='container'>
-        <Route path='/' exact render={() => <Home articles={articles} />} />
-        <Route path='/write' exact component={Write} />
-        <Route path='/article' render={() => <Article articles={articles} />} />
+        <Switch>
+          {" "}
+          <Route path='/' exact render={() => <Home articles={articles} />} />
+          <Route path='/write' exact component={Write} />
+          <Route
+            path='/article'
+            render={() => <Article articles={articles} />}
+          />
+          <Route component={NotFound} />
+        </Switch>
       </div>
     </React.Fragment>
   );
