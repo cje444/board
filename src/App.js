@@ -24,10 +24,9 @@ const App = () => {
   return (
     <React.Fragment>
       <div className='container'>
-        <Home articles={articles} />
-        <Route path='/home' exact component={Home} />
+        <Route path='/' exact render={() => <Home articles={articles} />} />
         <Route path='/write' exact component={Write} />
-        <Route path='/article' exact component={Article} />
+        <Route path='/article' render={() => <Article articles={articles} />} />
       </div>
     </React.Fragment>
   );

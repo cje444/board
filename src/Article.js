@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import "./Article.css";
 
 const Article = (props) => {
+  console.log(props.articles);
   return (
     <React.Fragment>
       <div className='detail_wrap'>
